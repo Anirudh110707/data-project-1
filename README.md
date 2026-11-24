@@ -140,3 +140,33 @@ docker run --rm --pull always \
 The sample dataset is included in the published image.
 The output persists in the host-mounted output directory.
 No registry authentication is required.
+
+## AWS Cloud Execution (Extra Credit)
+
+The published Docker image was successfully executed on an
+AWS EC2 instance running Amazon Linux 2023.
+
+Execution command:
+
+```bash
+sudo docker run --rm --pull always \
+  -v "$PWD/output:/app/output" \
+  ghcr.io/anirudh110707/penguin-etl:1.0
+```
+
+### Cloud Execution Results
+
+- Records read: 344
+- Records rejected: 2
+- Records processed: 342
+- Records written: 5
+- Elapsed time: 0.0030 seconds
+
+The output persisted in the host-mounted output directory
+after the Docker container exited.
+
+### Execution Evidence
+
+![AWS EC2 Execution](assets/aws_execution.png)
+
+The saved output matches output/penguin_summary.csv.
