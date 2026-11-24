@@ -123,3 +123,20 @@ Execution time varies by machine.
 
 Project source code is licensed under the MIT License.
 See LICENSE for details.
+
+## Published Docker Image (Extra Credit)
+
+The versioned Docker image is publicly available through
+GitHub Container Registry.
+
+Run the pipeline without building the image locally:
+
+```bash
+docker run --rm --pull always \
+  -v "$PWD/output:/app/output" \
+  ghcr.io/anirudh110707/penguin-etl:1.0
+```
+
+The sample dataset is included in the published image.
+The output persists in the host-mounted output directory.
+No registry authentication is required.
